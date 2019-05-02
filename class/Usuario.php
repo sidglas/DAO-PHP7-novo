@@ -1,6 +1,6 @@
 <?php
 
-echo "eco";
+echo "eco echo";
 
 
 ?>
