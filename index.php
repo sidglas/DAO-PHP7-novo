@@ -46,8 +46,53 @@ $quem1 = new Usuario();
 $quem1->aprendendoJoin(3);
 var_dump($quem1);
 
+echo "<br />============= Listando  ============================================================<br />";
 
 
+$lista1 = new Usuario();
+$lista1->getList1();
+
+
+
+echo "<br />============= Listando com metodp estático  ============================================================<br />";
+
+//como na getlist2 não se usou $this, podemos fazer uma funçãoo estática!!!
+//$lista2 = new Usuario();
+
+echo " <br /> Vendo Lista 2 através de método estático <br />";
+$retornou = Usuario::getList2();
+var_dump($retornou);
+
+echo "<br />============= Listando pesquisa (search)  ============================================================<br />";
+
+//como na getlist2 não se usou $this, podemos fazer uma funçãoo estática!!!
+//$lista2 = new Usuario();
+
+echo " <br /> VendoPesquisa através de método estático <br />";
+$retornou = Usuario::search("jo");
+var_dump($retornou);
+
+
+
+/*
+$cont = count
+			if ($cont > 0) {
+
+				return($results,$cont);
+				for($i=0;$i<$cont;$i++) {
+
+
+					$row = $results[$i];
+					$this->setIdusuario($row['idusuario']);
+					$this->setDeslogin($row['deslogin']);
+					$this->setDessenha($row['dessenha']);
+					$this->setDtcadastro(new DateTime($row['dtcadastro']));
+					echo "<br />" . $this;
+				}	
+
+			}
+
+*/
 
 
 
