@@ -16,7 +16,8 @@
 
 			foreach ($parameters as $key=>$value) {
 
-				$this->setParam($statment, $key, $value);
+
+			$this->setParam($statment, $key, $value);
 
 			}
 		}
@@ -25,6 +26,7 @@
 		private function setParam($statment, $key , $value){
 
 			$statment->bindParam( $key, $value);
+
 
 		}		
 

@@ -89,6 +89,7 @@ echo "Inserido Aluno :";
 echo $aluno;
 
 */
+/*
 echo "<br />============= Insert no MySQL  usando o construct ============================================================<br />";
 //apenas MySql, pois tem uama stored procedure e esta é chamada via caal.
 //se fosse no MSSQL seria via Execute
@@ -97,8 +98,33 @@ $aluno = new Usuario("Giovani","444555");
 $aluno->insert();
 echo "Inserido Aluno :";
 echo $aluno;
+*/
+echo "<br />=============Update  usando o construct ============================================================<br />";
+//apenas MySql, pois tem uama stored procedure e esta é chamada via caal.
+//se fosse no MSSQL seria via Execute
+
+//$aluno = new Usuario("Giovanazi","555666");
+
+ 
+$aluno = new Usuario();
+$aluno->setIdusuario("39") ; 
+
+$aluno->Update("Giovanazi","555666");
+echo "Alterado Aluno :";
+
+echo $aluno;
+//echo $aluno;
+/*
+$usuario = new Usuario();
+$usuario->loadById(39);
 
 
+echo $usuario;
+$usuario->Update("Giovanazi","555666");
+echo $usuario;
+
+echo "alallllaaaannnnnpres";
+*/
 /*
 $cont = count
 			if ($cont > 0) {

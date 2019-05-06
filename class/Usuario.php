@@ -117,6 +117,7 @@
 			//$results = $sql->select("select * from tb_usuarios WHERE idsuario = :ID", array(":ID"=>$id));
 			$results = $sql->select("SELECT * from tb_usuarios   WHERE deslogin = :LOGIN  and dessenha =:PASSWORD", array(":LOGIN"=>$deslogin,
 																													  ":PASSWORD"=>$password));
+
 						
 			if (count($results) > 0) {
 
@@ -172,12 +173,34 @@
 
 			if (count($results) > 0) {
 
+
 				$this->setData($results[0]);
 
 			}
 
 
 		}		
+
+//========================================================================================						
+		public function Update($login, $password) {
+
+            
+
+
+
+			$this->setDeslogin($login);
+			$this->setDessenha($password);
+	
+			$sql = new Sql();
+
+			//echo $this->getDeslogin() . " " . $this->getDessenha() . $this->getIdusuario();
+
+//			$sql->query("UPDATE tb_usuariosin set deslogin = :DESLOGIN, desenha = :PASSWORD  WHERE idusuario = :ID", 
+//					array(":DESLOGIN"=>$this->getDeslogin(), ":PASSWORD"=>$this->getDessenha(), ":ID"=>$this->getIdusuario()));
+			$sql->query("UPDATE tb_usuarios SET deslogin = :DESLOGIN, dessenha = :PASSWORD WHERE id_usuario = :ID",
+array(":DESLOGIN"=>$this->getDeslogin(), ":PASSWORD"=>$this->getDessenha(), ":ID"=>$this->getIdusuario()));
+
+		}				
 
 //========================================================================================		
 		public function __toString() {
@@ -187,10 +210,11 @@
 			return json_encode (array("idusuario"=>$this->getIdusuario(),
 									  "deslogin"=>$this->getDeslogin(),
                                       "dessenha"=>$this->getDesSenha(),
-                                      "deslogin"=>$this->getDeslogin(),
-                                      "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s") 
+                                      "deslogin"=>$this->getDeslogin()
+                                     // "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s") 
 									));
-									
+		 
+					
 		}
 
 //========================================================================================		
