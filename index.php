@@ -75,13 +75,25 @@ $retornou = Usuario::search("jo");
 var_dump($retornou);
 
 */
-echo "<br />============= Insert no MySQL  ============================================================<br />";
+
+/*
+echo "<br />============= Insert no MySQL  sem usar o construct ============================================================<br />";
 //apenas MySql, pois tem uama stored procedure e esta é chamada via caal.
 //se fosse no MSSQL seria via Execute
 
 $aluno = new Usuario;
 $aluno->setDeslogin("Mariana");
 $aluno->setDessenha("@123456");
+$aluno->insert();
+echo "Inserido Aluno :";
+echo $aluno;
+
+*/
+echo "<br />============= Insert no MySQL  usando o construct ============================================================<br />";
+//apenas MySql, pois tem uama stored procedure e esta é chamada via caal.
+//se fosse no MSSQL seria via Execute
+
+$aluno = new Usuario("Giovani","444555");
 $aluno->insert();
 echo "Inserido Aluno :";
 echo $aluno;
