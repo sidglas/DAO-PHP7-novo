@@ -20,6 +20,8 @@ $usuarios = $sql->select("SELECT * from tb_usuarios   where idusuario = :ID ", a
 echo json_encode($usuarios);
 */
 
+
+/*
 echo "<br />=========================================================================<br />";
 
 
@@ -72,6 +74,17 @@ echo " <br /> VendoPesquisa através de método estático <br />";
 $retornou = Usuario::search("jo");
 var_dump($retornou);
 
+*/
+echo "<br />============= Insert no MySQL  ============================================================<br />";
+//apenas MySql, pois tem uama stored procedure e esta é chamada via caal.
+//se fosse no MSSQL seria via Execute
+
+$aluno = new Usuario;
+$aluno->setDeslogin("Mariana");
+$aluno->setDessenha("@123456");
+$aluno->insert();
+echo "Inserido Aluno :";
+echo $aluno;
 
 
 /*
