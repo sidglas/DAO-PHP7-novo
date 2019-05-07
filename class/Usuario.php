@@ -209,7 +209,20 @@
 
 		}				
 
+//========================================================================================						
+		public function delete() {
 
+    		$sql = new Sql();
+
+			$sql->query("DELETE from tb_usuarios where idusuario = :ID", array(":ID"=>$this->getIdusuario()
+			));
+
+			$this->setIdusuario(0);
+			$this->setDeslogin("");
+			$this->setDessenha("");
+			$this->setDtcadastro(new DateTime());
+
+		}				
 //========================================================================================		
 		public function __toString() {
 
@@ -218,8 +231,8 @@
 			return json_encode (array("idusuario"=>$this->getIdusuario(),
 									  "deslogin"=>$this->getDeslogin(),
                                       "dessenha"=>$this->getDesSenha(),
-                                      "deslogin"=>$this->getDeslogin()
-                                     // "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s") 
+                                      "deslogin"=>$this->getDeslogin(),
+                                      "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s") 
 									));
 		 
 					

@@ -99,7 +99,8 @@ $aluno->insert();
 echo "Inserido Aluno :";
 echo $aluno;
 */
-echo "<br />=============Update  usando o construct ============================================================<br />";
+/*
+echo "<br />============ Update  ============== ============================================================<br />";
 //apenas MySql, pois tem uama stored procedure e esta é chamada via caal.
 //se fosse no MSSQL seria via Execute
 
@@ -114,8 +115,7 @@ echo "Alterado Aluno :";
 
 echo $aluno;
 
-//Agora usando o construtor do Usuario
-
+echo "<br />=============Update  usando o construct ============================================================<br />";
 $aluno = new Usuario("Capelma", "nova0Senha");
 $aluno->setIdusuario("4") ; 
 
@@ -124,6 +124,12 @@ echo "Alterado Aluno :";
 
 echo $aluno;
 
+*/
+echo "<br />============ Deleta ============================================================<br />";
 
+$usuario = new Usuario();
+$usuario->loadById(39);
+$usuario->delete();
+echo $usuario;
 
 ?>
