@@ -187,20 +187,28 @@
             
 
 
-
 			$this->setDeslogin($login);
 			$this->setDessenha($password);
 	
 			$sql = new Sql();
 
-			//echo $this->getDeslogin() . " " . $this->getDessenha() . $this->getIdusuario();
-
-//			$sql->query("UPDATE tb_usuariosin set deslogin = :DESLOGIN, desenha = :PASSWORD  WHERE idusuario = :ID", 
-//					array(":DESLOGIN"=>$this->getDeslogin(), ":PASSWORD"=>$this->getDessenha(), ":ID"=>$this->getIdusuario()));
-			$sql->query("UPDATE tb_usuarios SET deslogin = :DESLOGIN, dessenha = :PASSWORD WHERE id_usuario = :ID",
-array(":DESLOGIN"=>$this->getDeslogin(), ":PASSWORD"=>$this->getDessenha(), ":ID"=>$this->getIdusuario()));
+			$sql->query("UPDATE tb_usuarios set deslogin = :DESLOGIN, dessenha = :PASSWORD  WHERE idusuario = :ID", 
+					array(":DESLOGIN"=>$this->getDeslogin(), ":PASSWORD"=>$this->getDessenha(), ":ID"=>$this->getIdusuario()));
 
 		}				
+
+//========================================================================================						
+		public function UpdateDadosConstruct() {
+
+            
+
+			$sql = new Sql();
+
+			$sql->query("UPDATE tb_usuarios set deslogin = :DESLOGIN, dessenha = :PASSWORD  WHERE idusuario = :ID", 
+					array(":DESLOGIN"=>$this->getDeslogin(), ":PASSWORD"=>$this->getDessenha(), ":ID"=>$this->getIdusuario()));
+
+		}				
+
 
 //========================================================================================		
 		public function __toString() {

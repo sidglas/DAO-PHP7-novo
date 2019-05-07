@@ -32,6 +32,8 @@
 
 		public function query($rawQuery, $params = array()) {
 
+			echo "dentro da query " . $rawQuery;
+
 			$stmt = $this->conn->prepare($rawQuery);
 
 			$this->setParams($stmt,$params);	

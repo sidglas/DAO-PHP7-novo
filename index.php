@@ -109,41 +109,20 @@ echo "<br />=============Update  usando o construct ============================
 $aluno = new Usuario();
 $aluno->setIdusuario("39") ; 
 
-$aluno->Update("Giovanazi","555666");
+$aluno->Update("Giovanazil","555666");
 echo "Alterado Aluno :";
 
 echo $aluno;
-//echo $aluno;
-/*
-$usuario = new Usuario();
-$usuario->loadById(39);
 
+//Agora usando o construtor do Usuario
 
-echo $usuario;
-$usuario->Update("Giovanazi","555666");
-echo $usuario;
+$aluno = new Usuario("Capelma", "nova0Senha");
+$aluno->setIdusuario("4") ; 
 
-echo "alallllaaaannnnnpres";
-*/
-/*
-$cont = count
-			if ($cont > 0) {
+$aluno->UpdateDadosConstruct();
+echo "Alterado Aluno :";
 
-				return($results,$cont);
-				for($i=0;$i<$cont;$i++) {
-
-
-					$row = $results[$i];
-					$this->setIdusuario($row['idusuario']);
-					$this->setDeslogin($row['deslogin']);
-					$this->setDessenha($row['dessenha']);
-					$this->setDtcadastro(new DateTime($row['dtcadastro']));
-					echo "<br />" . $this;
-				}	
-
-			}
-
-*/
+echo $aluno;
 
 
 
